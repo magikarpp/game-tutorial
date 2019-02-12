@@ -1,4 +1,4 @@
-package com.tutorial.main;
+package com.things.main;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -10,7 +10,7 @@ public class KeyInput extends KeyAdapter {
   public KeyInput(Handler handler){
     this.handler = handler;
   }
-  
+
   public void keyPressed(KeyEvent e){
 
     int key = e.getKeyCode();
