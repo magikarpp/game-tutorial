@@ -18,6 +18,8 @@ public class Game extends Canvas implements Runnable{
 
   private Random r;
   private Handler handler;
+  private HUD hud;
+  private Spawn spawn;
 
   public Game(){
     handler = new Handler();
@@ -25,10 +27,11 @@ public class Game extends Canvas implements Runnable{
 
     new Window(width, height, "A New Game!", this);
 
+    hud = new HUD();
+    spawn = new Spawn(handler, hud);
     r = new Random();
 
-    handler.addObject(new Player(width/2-32, height/2-32, ID.Player));
-    handler.addObject(new Player(width/2+64, height/2+64, ID.Player2));
+    handler.addObject(new Player(width/2-32, height/2-32, ID.Player, handler));
 
   }
 
@@ -49,6 +52,8 @@ public class Game extends Canvas implements Runnable{
   }
 
   public void run(){
+    // window focused on JFrame on run()
+    this.requestFocus();
     // frame ticks gotten online
     long lastTime = System.nanoTime();
     double amountOfTicks = 60.0;
@@ -80,6 +85,8 @@ public class Game extends Canvas implements Runnable{
 
   private void tick(){
     handler.tick();
+    hud.tick();
+    spawn.tick();
   }
 
   private void render(){
@@ -96,8 +103,19 @@ public class Game extends Canvas implements Runnable{
 
     handler.render(g);
 
+    hud.render(g);
+
     g.dispose();
     bs.show();
+  }
+
+  public static int clamp(int var, int min, int max){
+    if(var >= max){
+      return var = max;
+    } else if(var <= min){
+      return var = min;
+    }
+    return var;
   }
 
   public static void main(String[] args){
