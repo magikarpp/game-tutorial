@@ -4,14 +4,15 @@ import java.awt.Rectangle;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class BasicEnemy extends GameObject {
-  Handler handler;
-  public BasicEnemy(float x, float y, ID id, Handler handler){
+public class FastEnemy extends GameObject {
+  private Handler handler;
+
+  public FastEnemy(float x, float y, ID id, Handler handler){
     super(x, y, id);
     this.handler = handler;
 
-    velX = 5;
-    velY = 5;
+    velX = 3;
+    velY = 9;
   }
 
   public Rectangle getBounds(){
@@ -33,7 +34,7 @@ public class BasicEnemy extends GameObject {
 
   @Override
   public void render(Graphics g){
-    g.setColor(Color.red);
+    g.setColor(Color.magenta);
     g.fillRect((int)x, (int)y, 16, 16);
   }
 

@@ -9,10 +9,10 @@ public class KeyInput extends KeyAdapter {
 
   public KeyInput(Handler handler){
     this.handler = handler;
+
   }
 
   public void keyPressed(KeyEvent e){
-
     int key = e.getKeyCode();
 
     for(int i = 0; i < handler.object.size(); i++){

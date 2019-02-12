@@ -3,14 +3,17 @@ package com.things.main;
 import java.awt.Rectangle;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
 
-public class BasicEnemy extends GameObject {
+public class BossBullet extends GameObject {
   Handler handler;
-  public BasicEnemy(float x, float y, ID id, Handler handler){
+  Random r = new Random();
+
+  public BossBullet(float x, float y, ID id, Handler handler){
     super(x, y, id);
     this.handler = handler;
 
-    velX = 5;
+    velX = (r.nextInt(5 -  -5)+ -5);
     velY = 5;
   }
 
@@ -23,12 +26,7 @@ public class BasicEnemy extends GameObject {
     x += velX;
     y += velY;
 
-    if(y <= 0 || y >= Game.height - 32){
-      velY *= -1;
-    }
-    if(x <= 0 || x >= Game.width - 32){
-      velX *= -1;
-    }
+    if(y >= Game.height) handler.removeObject(this);
   }
 
   @Override
