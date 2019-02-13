@@ -51,18 +51,19 @@ public class Spawn {
         handler.addObject(new SmartEnemy(r.nextInt(Game.width - 50), r.nextInt(Game.height - 50), ID.SmartEnemy, handler));
       } else if(hud.getLevel() == 6){
         handler.clearEnemies();
-        handler.addObject(new Boss1(Game.width/2-48, -125, ID.Boss1, handler));
+        Boss1 boss1 = new Boss1(Game.width/2-48, -125, ID.Boss1, handler);
+        handler.addBossObject(boss1);
         bossAlive = true;
       } else if(hud.getLevel() == 7){
-        handler.addObject(new Boss1Token(r.nextInt(Game.width - 50), r.nextInt(Game.height - 250)+300, ID.Boss1Token, handler));
+        handler.addObject(new Boss1Token(r.nextInt(Game.width - 50), r.nextInt(Game.height - 250)+250, ID.Boss1Token, handler));
       } else if(hud.getLevel() == 8){
-        handler.addObject(new Boss1Token(r.nextInt(Game.width - 50), r.nextInt(Game.height - 250)+300, ID.Boss1Token, handler));
+        handler.addObject(new Boss1Token(r.nextInt(Game.width - 50), r.nextInt(Game.height - 250)+250, ID.Boss1Token, handler));
       } else if(hud.getLevel() == 9){
-        handler.addObject(new Boss1Token(r.nextInt(Game.width - 50), r.nextInt(Game.height - 250)+300, ID.Boss1Token, handler));
+        handler.addObject(new Boss1Token(r.nextInt(Game.width - 50), r.nextInt(Game.height - 250)+250, ID.Boss1Token, handler));
       } else if(hud.getLevel() == 10){
-        handler.addObject(new Boss1Token(r.nextInt(Game.width - 50), r.nextInt(Game.height - 250)+300, ID.Boss1Token, handler));
+        handler.addObject(new Boss1Token(r.nextInt(Game.width - 50), r.nextInt(Game.height - 250)+250, ID.Boss1Token, handler));
       } else if(hud.getLevel() == 11){
-        handler.addObject(new Boss1Token(r.nextInt(Game.width - 50), r.nextInt(Game.height - 250)+300, ID.Boss1Token, handler));
+        handler.addObject(new Boss1Token(r.nextInt(Game.width - 50), r.nextInt(Game.height - 250)+250, ID.Boss1Token, handler));
       }
     }
   }

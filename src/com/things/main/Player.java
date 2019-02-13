@@ -61,12 +61,7 @@ public class Player extends GameObject {
 
 
       } else if(handler.difficulty == Handler.DIFF.Adult){
-        if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy){
-          if(getBounds().intersects(tempObject.getBounds())){
-            HUD.health = 0;
-          }
-        }
-        if(tempObject.getId() == ID.Boss1){
+        if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy || tempObject.getId() == ID.Boss1){
           if(getBounds().intersects(tempObject.getBounds())){
             HUD.health = 0;
           }

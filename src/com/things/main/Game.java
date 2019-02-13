@@ -98,7 +98,7 @@ public class Game extends Canvas implements Runnable{
     if(gameState == STATE.Game){
       hud.tick();
       spawn.tick();
-    } else if(gameState == STATE.Menu || gameState == STATE.Options || gameState == STATE.Dead){
+    } else if(gameState == STATE.Menu || gameState == STATE.Options || gameState == STATE.Dead || gameState == STATE.Win){
       menu.tick();
     }
   }
@@ -119,7 +119,7 @@ public class Game extends Canvas implements Runnable{
     if(gameState == STATE.Game){
       hud.render(g);
 
-    } else if(gameState == STATE.Menu || gameState == STATE.Options || gameState == STATE.Dead){
+    } else if(gameState == STATE.Menu || gameState == STATE.Options || gameState == STATE.Dead || gameState == STATE.Win){
       menu.render(g);
     }
 
