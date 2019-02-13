@@ -12,7 +12,7 @@ public class Boss1 extends GameObject {
   private int timer = 75;
   private int timer2 = 50;
 
-  private int health = 5;
+  private int health = 4;
 
   public Boss1(float x, float y, ID id, Handler handler){
     super(x, y, id);
