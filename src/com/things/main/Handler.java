@@ -41,4 +41,8 @@ public class Handler {
     }
   }
 
+  public void clearEverything(){
+    object.clear();
+  }
+
 }

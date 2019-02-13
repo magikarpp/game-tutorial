@@ -5,11 +5,19 @@ import java.awt.Graphics;
 
 public class HUD {
 
+  private Game game;
+  private Handler handler;
+
   public static float health = 100;
   private float greenVal = 255;
 
   private float score = 0;
   private float level = 1;
+
+  public HUD(Game game, Handler handler){
+    this.game = game;
+    this.handler = handler;
+  }
 
   public void tick(){
     health = Game.clamp(health, 0, 100);
@@ -18,6 +26,8 @@ public class HUD {
     greenVal = health * 2;
 
     score++;
+
+    isDead();
   }
 
   public void render(Graphics g){
@@ -31,6 +41,13 @@ public class HUD {
     g.drawString("Score: " + (int)score, 15, 64);
     g.drawString("Level: " + (int)level, 15, 80);
 
+  }
+
+  public void isDead(){
+    if(health <= 0){
+      handler.clearEverything();
+      game.gameState = Game.STATE.Dead;
+    }
   }
 
   public void setScore(float score){
