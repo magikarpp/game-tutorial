@@ -33,15 +33,45 @@ public class Player extends GameObject {
     for(int i = 0; i < handler.object.size(); i++){
       GameObject tempObject = handler.object.get(i);
 
-      if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy){
-        if(getBounds().intersects(tempObject.getBounds())){
-          HUD.health -= 2;
+      if(handler.difficulty == Handler.DIFF.Baby){
+        if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy){
+          if(getBounds().intersects(tempObject.getBounds())){
+            HUD.health -= 2;
+          }
         }
-      }
-      if(tempObject.getId() == ID.Boss1){
-        if(getBounds().intersects(tempObject.getBounds())){
-          HUD.health = 0;
+        if(tempObject.getId() == ID.Boss1){
+          if(getBounds().intersects(tempObject.getBounds())){
+            HUD.health = 0;
+          }
         }
+
+
+      } else if(handler.difficulty == Handler.DIFF.Child){
+        if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy){
+          if(getBounds().intersects(tempObject.getBounds())){
+            HUD.health -= 4;
+          }
+        }
+        if(tempObject.getId() == ID.Boss1){
+          if(getBounds().intersects(tempObject.getBounds())){
+            HUD.health = 0;
+          }
+        }
+
+
+
+      } else if(handler.difficulty == Handler.DIFF.Adult){
+        if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy){
+          if(getBounds().intersects(tempObject.getBounds())){
+            HUD.health = 0;
+          }
+        }
+        if(tempObject.getId() == ID.Boss1){
+          if(getBounds().intersects(tempObject.getBounds())){
+            HUD.health = 0;
+          }
+        }
+
       }
 
     }

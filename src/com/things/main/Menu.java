@@ -42,6 +42,21 @@ public class Menu extends MouseAdapter{
 
     } else if(game.gameState == Game.STATE.Options){
 
+      if(mouseOver(mx, my, 75, 240, 150, 32)){
+        handler.difficulty = Handler.DIFF.Baby;
+        game.gameState = Game.STATE.Menu;
+      }
+
+      if(mouseOver(mx, my, 250, 240, 150, 32)){
+        handler.difficulty = Handler.DIFF.Child;
+        game.gameState = Game.STATE.Menu;
+      }
+
+      if(mouseOver(mx, my, 425, 240, 150, 32)){
+        handler.difficulty = Handler.DIFF.Adult;
+        game.gameState = Game.STATE.Menu;
+      }
+
       if(mouseOver(mx, my, 250, 340, 150, 32)){
         game.gameState = Game.STATE.Menu;
       }
