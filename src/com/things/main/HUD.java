@@ -14,6 +14,12 @@ public class HUD {
   private float score = 0;
   private float level = 1;
 
+  public enum DIFF {
+    Baby,
+    Child,
+    Adult
+  };
+
   public HUD(Game game, Handler handler){
     this.game = game;
     this.handler = handler;

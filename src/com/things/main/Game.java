@@ -29,7 +29,7 @@ public class Game extends Canvas implements Runnable{
     Game
   };
 
-  public STATE gameState = STATE.Menu;
+  public STATE gameState = STATE.Game;
 
   public Game(){
     handler = new Handler();
@@ -97,7 +97,7 @@ public class Game extends Canvas implements Runnable{
     if(gameState == STATE.Game){
       hud.tick();
       spawn.tick();
-    } else if(gameState == STATE.Menu || gameState == STATE.Dead){
+    } else if(gameState == STATE.Menu || gameState == STATE.Options || gameState == STATE.Dead){
       menu.tick();
     }
   }
@@ -118,7 +118,7 @@ public class Game extends Canvas implements Runnable{
     if(gameState == STATE.Game){
       hud.render(g);
 
-    } else if(gameState == STATE.Menu || gameState == STATE.Dead){
+    } else if(gameState == STATE.Menu || gameState == STATE.Options || gameState == STATE.Dead){
       menu.render(g);
     }
 

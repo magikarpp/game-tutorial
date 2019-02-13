@@ -42,6 +42,9 @@ public class Menu extends MouseAdapter{
 
     } else if(game.gameState == Game.STATE.Options){
 
+      if(mouseOver(mx, my, 250, 340, 150, 32)){
+        game.gameState = Game.STATE.Menu;
+      }
 
     } else if(game.gameState == Game.STATE.Dead){
       if(mouseOver(mx, my, 250, 340, 150, 32)){
@@ -71,6 +74,7 @@ public class Menu extends MouseAdapter{
   public void render(Graphics g){
     Font fnt = new Font("arial", 1, 50);
     Font fnt2 = new Font("arial", 1, 12);
+    Font fnt3 = new Font("arial", 1, 24);
 
     g.setColor(Color.white);
 
@@ -87,11 +91,30 @@ public class Menu extends MouseAdapter{
 
       g.drawRect(320-50, 240+100, 100,32);
       g.drawString("Options", 320-25, 240+120);
+
     } else if(game.gameState == Game.STATE.Options){
+      g.setFont(fnt);
+      g.drawString("Options", 320-110, 75);
+
+      g.setFont(fnt3);
+      g.drawString("Difficulty", 260, 150);
+
+      g.setFont(fnt2);
+      g.drawRect(75, 240, 150,32);
+      g.drawString("Baby", 130, 260);
+
+      g.drawRect(250, 240, 150,32);
+      g.drawString("Child", 305, 260);
+
+      g.drawRect(425, 240, 150,32);
+      g.drawString("Adult", 480, 260);
+
+      g.drawRect(250, 240+100, 150,32);
+      g.drawString("Back to Menu", 277, 240+120);
 
     } else if(game.gameState == Game.STATE.Dead){
       g.setFont(fnt);
-      g.drawString("lol You Lose!", 135, 150);
+      g.drawString("You Lose!", 185, 150);
 
       g.setFont(fnt2);
       g.drawRect(250, 240+100, 150,32);
