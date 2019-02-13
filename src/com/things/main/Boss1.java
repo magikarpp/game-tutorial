@@ -42,7 +42,7 @@ public class Boss1 extends GameObject {
     if(timer2 <=0){
       if(velX == 0) velX = 3;
       int spawn = r.nextInt(10);
-      if(spawn == 0) handler.addObject(new BossBullet((int)x, (int)y, ID.BasicEnemy, handler));
+      if(spawn == 0) handler.addObject(new BossBullet((int)x+48, (int)y+48, ID.BasicEnemy, handler));
     }
 
     if(x <= 0 || x >= Game.width - 96){

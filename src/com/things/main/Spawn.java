@@ -23,7 +23,8 @@ public class Spawn {
       }
     }
 
-    if(scoreKeep >= 500){
+    if(scoreKeep >= 250){
+
       scoreKeep = 0;
       hud.setLevel(hud.getLevel() + 1);
       if(hud.getLevel() == 2){
@@ -34,6 +35,7 @@ public class Spawn {
       } else if(hud.getLevel() == 4){
         handler.addObject(new SmartEnemy(r.nextInt(Game.width - 50), r.nextInt(Game.height - 50), ID.SmartEnemy, handler));
       } else if(hud.getLevel() == 6){
+        handler.clearEnemies();
         handler.addObject(new Boss1(Game.width/2-48, -125, ID.Boss1, handler));
       }
 
