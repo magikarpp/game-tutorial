@@ -65,8 +65,12 @@ public class Menu extends MouseAdapter{
       if(mouseOver(mx, my, 250, 340, 150, 32)){
         game.gameState = Game.STATE.Menu;
       }
-
+    } else if(game.gameState == Game.STATE.Win){
+      if(mouseOver(mx, my, 250, 340, 150, 32)){
+        game.gameState = Game.STATE.Menu;
+      }
     }
+
   }
 
   public void mouseReleased(MouseEvent e){
@@ -130,6 +134,15 @@ public class Menu extends MouseAdapter{
     } else if(game.gameState == Game.STATE.Dead){
       g.setFont(fnt);
       g.drawString("You Lose!", 185, 150);
+
+      g.setFont(fnt2);
+      g.drawRect(250, 240+100, 150,32);
+      g.drawString("Back to Menu", 275, 240+120);
+
+
+    } else if(game.gameState == Game.STATE.Win){
+      g.setFont(fnt);
+      g.drawString("You Win!", 185, 150);
 
       g.setFont(fnt2);
       g.drawRect(250, 240+100, 150,32);

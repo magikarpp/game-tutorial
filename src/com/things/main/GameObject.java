@@ -17,7 +17,7 @@ public abstract class GameObject {
 
   public abstract void tick();
   public abstract void render(Graphics g);
-  // rectangle handles all our collision (intersect)
+  // rectangle handles collision (intersect)
   public abstract Rectangle getBounds();
 
   public void setX(float x){

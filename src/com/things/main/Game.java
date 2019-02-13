@@ -26,6 +26,7 @@ public class Game extends Canvas implements Runnable{
     Menu,
     Options,
     Dead,
+    Win,
     Game
   };
 
@@ -40,7 +41,7 @@ public class Game extends Canvas implements Runnable{
     new Window(width, height, "A New Game!", this);
 
     hud = new HUD(this, handler);
-    spawn = new Spawn(handler, hud);
+    spawn = new Spawn(handler, hud, this);
     r = new Random();
   }
 

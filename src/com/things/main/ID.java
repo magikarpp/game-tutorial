@@ -6,6 +6,7 @@ public enum ID {
   FastEnemy(),
   SmartEnemy(),
   Boss1(),
+  Boss1Token(),
   BossBullet(),
   BasicEnemy();
 

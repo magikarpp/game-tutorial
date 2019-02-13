@@ -12,6 +12,8 @@ public class Boss1 extends GameObject {
   private int timer = 75;
   private int timer2 = 50;
 
+  private int health = 5;
+
   public Boss1(float x, float y, ID id, Handler handler){
     super(x, y, id);
     this.handler = handler;
@@ -22,6 +24,14 @@ public class Boss1 extends GameObject {
 
   public Rectangle getBounds(){
     return new Rectangle((int)x, (int)y, 96, 96);
+  }
+
+  public int getHealth(){
+    return this.health;
+  }
+
+  public void setHealth(int health){
+    this.health = health;
   }
 
   @Override

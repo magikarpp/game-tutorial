@@ -6,6 +6,7 @@ import java.awt.Graphics;
 public class Handler {
 
   LinkedList<GameObject> object = new LinkedList<GameObject>();
+  LinkedList<Boss1> bossObjects = new LinkedList<Boss1>();
 
   public enum DIFF {
     Baby,
@@ -35,8 +36,18 @@ public class Handler {
     this.object.add(object);
   }
 
+  public void addBossObject(Boss1 boss){
+    this.bossObjects.add(boss);
+    this.object.add(boss);
+  }
+
   public void removeObject(GameObject object){
     this.object.remove(object);
+  }
+
+  public void removeBossObject(Boss1 boss){
+    this.bossObjects.remove(boss);
+    this.object.remove(boss);
   }
 
   public void clearEnemies(){
@@ -44,13 +55,14 @@ public class Handler {
       GameObject tempObject = object.get(i);
       if(tempObject.getId() != ID.Player){
         object.clear();
-        addObject(new Player((int)tempObject.getX(), (int)tempObject.getY(), ID.Player, this));
+        addObject(new Player(Game.width/2-32, Game.height-64, ID.Player, this));
       }
     }
   }
 
   public void clearEverything(){
     object.clear();
+    bossObjects.clear();
   }
 
 }
