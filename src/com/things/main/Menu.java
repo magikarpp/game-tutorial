@@ -142,7 +142,7 @@ public class Menu extends MouseAdapter{
 
     } else if(game.gameState == Game.STATE.Win){
       g.setFont(fnt);
-      g.drawString("You Win!", 185, 150);
+      g.drawString("You Win!", 190, 150);
 
       g.setFont(fnt2);
       g.drawRect(250, 240+100, 150,32);

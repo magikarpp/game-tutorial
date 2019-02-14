@@ -42,6 +42,7 @@ public class Game extends Canvas implements Runnable{
 
     hud = new HUD(this, handler);
     spawn = new Spawn(handler, hud, this);
+
     r = new Random();
   }
 

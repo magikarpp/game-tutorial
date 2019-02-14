@@ -41,6 +41,16 @@ public class HUD {
     g.drawString("Score: " + (int)score, 15, 64);
     g.drawString("Level: " + (int)level, 15, 80);
 
+    for(int i = 0; i < handler.bossObjects.size(); i++){
+      Boss1 tempBoss = handler.bossObjects.get(i);
+      if(tempBoss.getId() == ID.Boss1){
+        g.setColor(Color.gray);
+        g.fillRect(425, 15, 200, 32);
+        g.setColor(new Color(75, (int)tempBoss.getGreenVal(), 0));
+        g.fillRect(425, 15, (int)(tempBoss.getHealth() * 2), 32);
+      }
+    }
+
   }
 
   public void isDead(){

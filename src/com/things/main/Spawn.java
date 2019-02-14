@@ -26,12 +26,13 @@ public class Spawn {
       }
     }
 
-    if(bossAlive == true){
+    if(bossAlive){
       for(int i = 0; i < handler.bossObjects.size(); i++){
         Boss1 tempBoss = handler.bossObjects.get(i);
         if(tempBoss.getId() == ID.Boss1){
           if(tempBoss.getHealth() <= 0){
             handler.clearEverything();
+            bossAlive = false;
             game.gameState = Game.STATE.Win;
           }
         }
@@ -66,6 +67,14 @@ public class Spawn {
         handler.addObject(new Boss1Token(r.nextInt(Game.width - 50), r.nextInt(Game.height - 250)+250, ID.Boss1Token, handler));
       }
     }
+  }
+
+  public boolean getBossAlive(){
+    return this.bossAlive;
+  }
+
+  public void setBossAlive(boolean bossAlive){
+    this.bossAlive = bossAlive;
   }
 
 }

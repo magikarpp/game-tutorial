@@ -12,7 +12,8 @@ public class Boss1 extends GameObject {
   private int timer = 75;
   private int timer2 = 50;
 
-  private int health = 5;
+  private int health = 100;
+  private float greenVal = 255;
 
   public Boss1(float x, float y, ID id, Handler handler){
     super(x, y, id);
@@ -34,10 +35,20 @@ public class Boss1 extends GameObject {
     this.health = health;
   }
 
+  public float getGreenVal(){
+    return this.greenVal;
+  }
+
+  public void setGreenVal(float greenVal){
+    this.greenVal = greenVal;
+  }
+
   @Override
   public void tick(){
     x += velX;
     y += velY;
+
+    greenVal = health * 2;
 
     if(timer <= 0){
       velY = 0;

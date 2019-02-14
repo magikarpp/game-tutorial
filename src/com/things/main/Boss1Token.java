@@ -34,7 +34,7 @@ public class Boss1Token extends GameObject {
           for(int j = 0; j < handler.bossObjects.size(); j++){
             Boss1 tempBoss = handler.bossObjects.get(j);
             if(tempBoss.getId() == ID.Boss1){
-              tempBoss.setHealth(tempBoss.getHealth()-1);
+              tempBoss.setHealth(tempBoss.getHealth()-20);
             }
           }
           handler.removeObject(this);
