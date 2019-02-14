@@ -40,7 +40,7 @@ public class Spawn {
     }
 
 
-    if(scoreKeep >= 250){
+    if(scoreKeep >= 500){
       scoreKeep = 0;
       hud.setLevel(hud.getLevel() + 1);
       if(hud.getLevel() == 2){

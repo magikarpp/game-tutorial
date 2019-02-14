@@ -36,7 +36,7 @@ public class Player extends GameObject {
       if(handler.difficulty == Handler.DIFF.Baby){
         if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy){
           if(getBounds().intersects(tempObject.getBounds())){
-            HUD.health -= 0;
+            HUD.health -= 2;
           }
         }
         if(tempObject.getId() == ID.Boss1){

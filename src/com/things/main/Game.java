@@ -27,7 +27,8 @@ public class Game extends Canvas implements Runnable{
     Options,
     Dead,
     Win,
-    Game
+    Game,
+    Game2
   };
 
   public STATE gameState = STATE.Menu;
